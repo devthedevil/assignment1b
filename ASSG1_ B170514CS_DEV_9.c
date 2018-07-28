@@ -1,0 +1,48 @@
+/*
+9. Write a program to find the second largest element and smallest element from
+an array of integers. Print the second largest and smallest element of the array.
+Input:
+Output: 
+Size of the array
+        8
+Array Elements
+        7, 6, 81, 3, 17, 24, 1, 100
+Second largest number in the array is         81
+Smallest element in the array is               1
+        
+*/
+#include<stdio.h>
+void sort(int n,int a[]);
+int main()
+{
+int n;
+printf("enter the size of array");
+scanf("%d",&n);
+int a[n];
+for(int i=0;i<n;i++)
+	{
+	printf("enter the array elements");
+	scanf("%d",&a[i]);
+	}
+	sort(n,a);
+	printf("Second largest number in the array is %d\n",a[n-2]);
+	printf("Smallest element in the array is %d",a[0]);
+	}
+void sort(int n,int a[])
+{
+	int temp;
+ 	for(int k=0;k<(n-1);k++)
+	{
+	for(int j=0;j<n-(k+1);j++)
+	{
+	if(a[j]>a[j+1])
+	{
+	temp=a[j];
+	a[j]=a[j+1];
+	a[j+1]=temp;
+	}
+	}
+}
+}
+	
+
